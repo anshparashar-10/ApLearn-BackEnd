@@ -10,6 +10,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node server.js"
   },
+  "engines": {
+    "node": ">=15.0.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
