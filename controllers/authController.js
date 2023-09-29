@@ -124,14 +124,14 @@ export const forgotPassword = async (request, response) => {
 
   await user.save({ validateBeforeSave: false }); //saving the resetPasswordToken
 
-  const resetPasswordUrl = `${request.protocol}://${process.env.BASE_URL}/password/reset/${resetToken}`;
+  const resetPasswordUrl = `${process.env.BASE_URL}password/reset/${resetToken}`;
 
   const message = `Your reset password token is : \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then please ignore it.`;
 
   try {
     await sendEmail({
       email: user.email,
-      subject: `PocketLearn Password Recovery`,
+      subject: `AptLearn Password Recovery`,
       message,
     });
 
